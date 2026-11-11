@@ -1,0 +1,94 @@
+.bar-chart {
+  /* One font size for all text in the chart: controls, legend, axis, labels, tooltip */
+  --chart-font-size: 14px;
+  font-size: var(--chart-font-size);
+  text-align: left;
+  margin: 0 auto; /* center the chart under the title */
+}
+
+.bar-chart__controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.toggle-group {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.toggle-group button {
+  font: inherit;
+  padding: 4px 10px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.toggle-group button + button {
+  border-left: 1px solid var(--border);
+}
+
+.toggle-group button.is-selected {
+  background: var(--text-h);
+  color: var(--bg);
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 2px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--chart-font-size);
+  color: var(--text);
+}
+
+.legend li {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.legend__swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.bar-chart__plot {
+  position: relative;
+}
+
+.bar-chart svg {
+  display: block;
+}
+
+.chart-text {
+  font-size: var(--chart-font-size);
+  fill: var(--text);
+}
+
+.chart-grid {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  padding: 6px 8px;
+  border-radius: 4px;
+  background: var(--text-h);
+  color: var(--bg);
+  font-size: var(--chart-font-size);
+  line-height: 1.4;
+  white-space: nowrap;
+}
